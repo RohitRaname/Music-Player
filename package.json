@@ -1,0 +1,17 @@
+{
+  "name": "7.navigated-nation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "sass": "node-sass -w sass/main.scss style.css",
+    "start": "parcel watch index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "parcel-bundler": "^1.12.5"
+  }
+}

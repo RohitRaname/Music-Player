@@ -1,0 +1,99 @@
+// - navigation /////////////////////////////////////////
+.nav {
+  &__list {
+    padding: 0 0.8rem;
+    background: $color-black-dark;
+  }
+  //  nav links
+  //  nav links
+  &__item {
+    & {
+      padding: 0.6rem 2rem;
+      border-radius: $border-radius-md;
+      @include flex-center;
+      justify-content: start;
+      gap: 2.4rem;
+      font-weight: 300;
+      position: relative;
+      transition: all 0.1s;
+      cursor: pointer;
+
+      i {
+        display: inline-block;
+        transition: all 0.3s;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 0.4rem;
+      }
+
+      // marker
+      &::before {
+        content: "";
+        @include abs-center;
+        border-radius: 10rem;
+        left: 0;
+        height: 0%;
+        width: 0.4rem;
+        transform-origin: top;
+        background: $color-primary;
+        transition: all 0.5s;
+      }
+
+      &[data-section="playlist"] {
+        &::before {
+          left: 0.2rem;
+        }
+
+        i:first-child {
+          margin-right: 2.4rem;
+          transition: all 0.3s;
+        }
+        justify-content: space-between;
+        overflow: hidden;
+        position: relative;
+
+        ul {
+          position: absolute;
+          bottom: 100%;
+          width: 100%;
+          left: 0;
+          margin-top: 0.4rem;
+        }
+      }
+
+      &--active[data-section="playlist"],
+      &--showList[data-section="playlist"] {
+        overflow: visible;
+        ul {
+          animation: slideTopIn 0.3s linear 0.1s both;
+        }
+      }
+
+      &--showList {
+        background: transparent !important;
+      }
+    }
+
+    // to rotate the arrow down icon
+
+    &--active {
+      &::before {
+        height: 50%;
+      }
+      background: $color-black-dull;
+    }
+
+    &:hover {
+      background: $color-black-dull;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-sm !important;
+  }
+
+  &__item[data-section="setting"] {
+    margin: 0 0.8rem;
+  }
+}

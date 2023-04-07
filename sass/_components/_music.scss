@@ -1,0 +1,18 @@
+.music {
+  // Play button at top Left
+  &__play-btn {
+    @include flex-center;
+    padding: 0.15rem;
+    border-radius: 50%;
+    background: $gradient-primary;
+
+    i {
+      background: $color-black-light;
+      padding: 0.5rem;
+      border-radius: 50%;
+      font-size: 1rem;
+    }
+  }
+
+  // - Song Card /////////////////////////////////////////
+}

@@ -1,0 +1,22 @@
+.library {
+  .header {
+  }
+
+  &__content {
+    @include flex-column;
+  }
+  &__box {
+    transition: all 0.3s;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &:hover {
+      background: $color-black-dim;
+    }
+  }
+  &__box-index {
+    font-size: $font-size-bg;
+    color: $color-primary;
+  }
+}

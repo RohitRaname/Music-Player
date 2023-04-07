@@ -1,0 +1,214 @@
+.control {
+  border-top: 1px solid $color-black-dim;
+  height: 100%;
+  padding: 0.8rem;
+  padding-top: 0.6rem;
+  padding-right: 1.8rem;
+  display: grid;
+  grid-template-columns: 3fr 5fr 2fr;
+  grid-row: repeat(2, min-content);
+  background: $color-black-light;
+  position: relative;
+  z-index: 100;
+
+  .progressBar__container {
+    grid-column: 1/-1;
+  }
+
+  &__left {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    cursor: pointer;
+    column-gap: 2.4rem;
+    align-items: center;
+    transition: all 0.3s;
+
+    &:hover {
+      background: $color-black-dull;
+    }
+  }
+  &__middle,
+  &__right {
+    @include flex-center;
+  }
+
+  &__middle {
+    gap: 1.2rem;
+  }
+  &__right {
+    justify-self: end;
+    gap: 0.4rem;
+  }
+
+  // common Element ***************************************
+  &__btn {
+    color: $color-grey-light;
+    cursor: pointer;
+    padding: 0.7rem 1.2rem;
+    transition: all 0.3s;
+    font-size: $font-size-md;
+    position: relative;
+    border: none;
+    background: transparent;
+
+    &:hover {
+      background: $color-black-dull;
+      border-radius: $border-radius-md;
+    }
+
+    &[data-action="next"],
+    &[data-action="prev"] {
+      font-size: 2.5rem;
+      padding: 0.5rem 1.6rem;
+    }
+
+    &[data-action="pause"],
+    &[data-action="play"] {
+      padding: 0;
+      border-radius: 50%;
+
+      &:hover {
+        background: $color-black-dull;
+      }
+    }
+
+    &[data-action="setting"] {
+      overflow: hidden;
+
+      ul {
+        position: absolute;
+        bottom: 77%;
+        right: 0;
+        width: 30rem;
+        border-radius: 5px;
+        box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.3);
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border: 1px solid #333;
+        transform: translateY(-128%);
+        bottom: 0;
+        transform: translateY(-5.4rem);
+      }
+
+      li {
+        overflow: hidden;
+      }
+
+      li[data-action="speed"] ul {
+        position: absolute;
+        top: 0%;
+        border-radius: $border-radius-md;
+        left: -53%;
+        width: 50%;
+        height: 20rem;
+        background: $color-black-light;
+        border: 1px solid $color-black-dim;
+        box-shadow: $box-shadow-dark;
+
+        li {
+          height: 20%;
+          padding: 0 0.5rem;
+        }
+      }
+
+      .control__setting--active[data-action="speed"] {
+        overflow: visible;
+      }
+    }
+
+    &--active[data-action="setting"] {
+      overflow: visible;
+    }
+    &--active[data-action="setting"] ul {
+      // backward makes the element dom present as set as first state
+
+      @include makeTranslateAnimation(0%, -40%);
+      animation: translateAnimation 0.1s linear 0.1s both;
+    }
+
+    &--active[data-action="volume"] {
+      .progressBar__container {
+        display: flex !important;
+      }
+    }
+  }
+
+  &__btn--active {
+    background: $color-black-dull;
+  }
+
+  &__icon {
+    font-size: inherit;
+  }
+
+  // Left  ***************************************
+  .curMusic {
+    &__img {
+      height: 7rem;
+      border-radius: $border-radius-bg;
+      width: 8rem;
+      grid-row: 1/3;
+    }
+    &__heading {
+      font-size: $default-font-size;
+      font-weight: 600;
+      grid-row: 1;
+      grid-column: 2;
+      margin-bottom: 0;
+      align-self: end;
+    }
+    &__artist {
+      align-self: start;
+      color: $color-shadow-light;
+      font-size: $font-size-lw;
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+
+  // Middle  ***************************************
+  // music__play-btn
+  .music__play-btn {
+    background: $gradient-primary;
+    padding: 0.4rem;
+    height: 6.2rem;
+    width: 5.6rem;
+    transition: all 0.3s;
+    i {
+      font-size: 2.6rem;
+      padding: 1.2rem 1.6rem;
+    }
+  }
+
+  // Right  ***************************************
+}
+
+// FULL VERSION
+
+.control--fullView {
+  .control__left {
+  }
+
+  &-img {
+    position: absolute;
+    animation: fade 0.25s linear forwards;
+    height: 104vh;
+    width: 100vw;
+    top: -88rem;
+    left: 0;
+    object-fit: cover;
+    filter: brightness;
+    filter: brightness(0.4) blur(10px);
+    object-position: center center;
+  }
+
+  .curMusic__img {
+    animation: fade 0.25s linear forwards;
+    border-radius: 11px;
+    position: absolute;
+    height: 17rem;
+    width: 17rem;
+    left: 1.8rem;
+    top: -19rem;
+  }
+}

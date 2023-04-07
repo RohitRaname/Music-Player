@@ -1,0 +1,51 @@
+.crud {
+  border-radius: $border-radius-md;
+  position: fixed;
+  z-index: 100;
+  max-width: 106rem;
+  width: 100%;
+  background: $color-black-dark;
+
+  // opacity:
+  // background: ;
+  padding: 1rem 2.4rem;
+  box-shadow: 0 0.4rem 1rem 0.2rem rgba($color-black, 0.3);
+  top: 10.5rem;
+
+  @include flex-center;
+  justify-content: space-between;
+
+  &-left,
+  &-right {
+    @include flex-center;
+    gap: 1.6rem;
+  }
+
+  &-clear {
+    margin-left: 1rem;
+    color: $color-primary;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 0.3rem;
+      width: 0.3rem;
+      background: $color-grey;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: -30%;
+      z-index: 10;
+    }
+  }
+}
+
+
+
+// checkbox in select
+.card__control--crud {
+  position: static !important;
+  cursor: pointer;
+}

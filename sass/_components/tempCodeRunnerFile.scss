@@ -1,0 +1,50 @@
+.popup__add {
+  &-overlay {
+    @include overlay;
+    z-index: 3000;
+  }
+
+  &-content {
+    @include fixed-center;
+    top: 45%;
+    z-index: 3000;
+    max-width: 50rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 11px;
+    box-shadow: $box-shadow-dark;
+    background: $color-black;
+  }
+
+  &-header,
+  &-footer {
+    padding: 2.4rem 4.8rem;
+    text-align: center;
+  }
+
+  &-header {
+    background: rgba($color-black-dim, 0.7);
+  }
+  &-footer {
+    background: rgba($color-black-dark, 0.8);
+    @include flex-center;
+    gap: 1.2rem;
+  }
+
+  // &-header{}
+  &-heading {
+  }
+  &-img {
+  }
+
+  &-input {
+    display: inline-block;
+    background-color: $color-black-dull;
+  }
+
+  // &-footer{}
+  &-btn {
+    width: 50%;
+    padding: 1rem 4.8rem;
+  }
+}

@@ -1,0 +1,31 @@
+.overview {
+  &__content {
+    // transform: translateY(3rem);
+    // opacity: 0;
+    transition: all .3s;
+  }
+
+
+
+
+  //   actual music
+  &__box {
+    &--home {
+    }
+    &-controls--home {
+    }
+    &-control--home {
+      &--home {
+      }
+      &-icon--home {
+      }
+    }
+
+    &-img--home {
+    }
+    &-name--home {
+    }
+    &-artist--home {
+    }
+  }
+}

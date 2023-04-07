@@ -1,0 +1,107 @@
+.progressBar {
+  &__container {
+    font-size: $font-size-sm;
+    color: $color-grey;
+
+    &--main {
+      @include grid-center;
+      grid-template-columns: min-content 1fr min-content;
+      gap: 1.6rem;
+    }
+  }
+
+  &__time {
+    color: $color-grey-light;
+    font-size: 1.3rem;
+
+    &--curTime {
+    }
+    &--duration {
+    }
+  }
+
+  // progress line to change music time
+  & {
+    width: 100%;
+    height: 0.5rem;
+    border-radius: $border-radius-round;
+    background: $color-shadow-light;
+    cursor: pointer;
+    position: relative;
+
+    &__line {
+      width: 40%;
+      height: 100%;
+      background: $color-primary;
+      position: relative;
+      transition: all 0.2s;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        z-index: 11;
+        transform: translate(50%, -50%);
+        height: 2rem;
+        width: 2rem;
+        background: $color-primary;
+        border: 6px solid $color-black-dim;
+        border-radius: 50%;
+        transition: all 0.3s;
+
+        &:hover {
+          border: 1px solid $color-black-dim;
+        }
+      }
+    }
+
+    // &__line::before:hover{
+    //   background: red;
+    // }
+  }
+}
+
+//  ProgressBar Volume ******************************
+.progressBar {
+  &__container--volume {
+    position: absolute;
+    z-index: 30;
+    background: $color-black-light;
+    box-shadow: $box-shadow-dark;
+    bottom: 5rem;
+    width: 24rem;
+    height: 6rem;
+    border-radius: $border-radius-md;
+    @include flex-center;
+    left: -6rem;
+    padding: 1rem 2.4rem;
+    border: 1px solid $color-black-dim;
+  }
+
+  &--volume {
+    width: 100%;
+  }
+  &__line--volume {
+    width: 100%;
+  }
+}
+
+// ProgressBar mini ************************************************
+.progressBar {
+  &--mini {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0px;
+  }
+  &__line--mini {
+    width: 3%;
+
+    &::before {
+      display: none;
+    }
+  }
+}

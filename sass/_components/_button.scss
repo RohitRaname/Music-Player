@@ -1,0 +1,56 @@
+.btn {
+  display: inline-block;
+  padding: 0.4rem 1.6rem;
+  border-radius: $border-radius-md;
+  font-family: inherit;
+  font-size: $font-size-md;
+  @include flex-center;
+  gap: 1.6rem;
+  box-shadow: $default-box-shadow;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    filter: brightness(90%);
+  }
+
+  // fixed set height width padding fonts size margin
+  &--icon {
+    color: $color-grey-light;
+    cursor: pointer;
+    padding: 0.7rem 1.2rem;
+    transition: all 0.3s;
+    border-radius: $border-radius-md;
+
+    &:hover {
+      background: $color-black-dull;
+    }
+    &--active {
+      background: $color-black-dull;
+    }
+
+    &:disabled {
+      &:hover {
+        background: transparent;
+      }
+
+      i {
+        color: $color-black-dull;
+      }
+    }
+  }
+
+  &--primary {
+    background: $color-tertiary;
+    color: $color-black-dark;
+  }
+
+  &--text {
+    background: $color-black-dim;
+  }
+}

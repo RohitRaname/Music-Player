@@ -1,0 +1,38 @@
+.drop {
+  &-parent {
+    position: relative;
+    z-index: 1000;
+  }
+
+  &-parent .drop-list {
+    position: absolute;
+    width: 100%;
+    top: 110%;
+    height: 0;
+    z-index: -1;
+    padding: 0;
+    background: transparent;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  &-parent[data-active="true"] {
+    .drop-list {
+      animation: goDown 0.15s ease-out both;
+    }
+  }
+  &-item {
+    background: $color-black-dim;
+    margin-bottom: 0 !important;
+    border-radius: 0 !important;
+    padding: 1rem 2rem !important;
+
+    &:first-child {
+      border-top-left-radius: 11px !important;
+      border-top-right-radius: 11px !important;
+    }
+    &:last-child {
+      border-bottom-left-radius: 11px !important;
+      border-bottom-right-radius: 11px !important;
+    }
+  }
+}

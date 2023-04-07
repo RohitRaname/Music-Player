@@ -1,0 +1,221 @@
+.playlistSong {
+  &__header {
+    display: grid;
+    grid-template-columns: min-content 8fr;
+    column-gap: 1.8rem;
+    background: $color-black-dim;
+    padding: 1.6rem;
+    border-radius: 6px;
+    align-items: start;
+    justify-items: start;
+  }
+  &__footer {
+  }
+
+  // &__header{} **********************************
+  &__gallery {
+    height: 20rem;
+    width: 24rem;
+    grid-row: 1/3;
+    grid-template-columns: repeat(2, 12rem);
+    grid-template-rows: repeat(2, 10rem);
+    border-radius: 6px;
+
+    &-img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__header-text {
+  }
+
+  &__heading {
+    margin-bottom: 0.3rem !important;
+  }
+  &__totalSongs {
+    color: $color-grey-dark;
+    font-weight: 300;
+    font-size: $font-size-sm;
+  }
+
+  &__btn-box {
+    grid-column: 2;
+    margin-top: -2.4rem;
+
+    @include flex-center;
+    gap: 2rem;
+  }
+
+  // &__footer{} **********************************************************************
+  &__list {
+    @include flex-column;
+    background: $color-black-dim;
+    border-radius: 6px;
+  }
+  &__item {
+    padding: 1.4rem 2.4rem;
+    display: grid;
+    grid-template-columns: repeat(2, min-content) 7fr 2fr 1fr;
+    column-gap: 1.8rem;
+    color: $color-grey;
+    transition: all 0.3s;
+
+    & > * {
+      color: inherit;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-black-light;
+    }
+  }
+
+  &__select-btn {
+    @include flex-center;
+    position: static;
+    margin-top: 0.2rem;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__btn,
+  &__select-btn {
+    height: 2.4rem;
+    width: 2.4rem;
+    background: transparent;
+    border: none;
+    position: static;
+    @include flex-center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 3px;
+    padding: 0.4rem;
+  }
+
+  &__icon {
+    background: transparent;
+    font-size: $font-size-md;
+
+    &-select {
+      color: $color-grey;
+      font-size: 1.2rem;
+      padding: 0.4rem;
+      border: 1px solid $color-shadow;
+      border-radius: 5px;
+      color: transparent;
+
+      &:hover {
+        background: $color-black-dull;
+      }
+
+      &:active {
+        background: $color-primary;
+      }
+    }
+  }
+
+  &__name,
+  &__artist {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__name {
+    margin-left: 24rem;
+  }
+
+  &__duration {
+    justify-self: end;
+  }
+
+  // &__footer{} STATE => HOVER,ACTIVE,--ACTIVE  **********************************************************************
+  // HOVER  ----------------------------------------------------------
+  &__item:hover {
+    cursor: pointer;
+  }
+
+  // select box
+  &__item:hover &__icon-headphone {
+    display: none;
+  }
+  &__item:hover &__icon-select {
+    display: block !important;
+  }
+
+  // play btn
+  &__item:hover &__icon-music {
+    display: none !important;
+    color: inherit;
+  }
+  &__item:hover &__icon-play {
+    display: block !important;
+    color: $color-primary;
+  }
+
+  &__btn:hover {
+    background: $color-black-dull;
+  }
+
+  // ACTIVE -----------------------------------------------------------------
+  &__item:active {
+  }
+
+  // JS-----------------------------------------------------------------
+  // show select box on all song
+
+  &__header[data-disable-btns="true"] .playlistSong__control-btn {
+    // disabled the playlist header buttons
+    background: $color-shadow-dark;
+    opacity: 0.7;
+    cursor: default;
+
+    &:hover {
+      background: $color-shadow-dark;
+      filter: none;
+    }
+  }
+
+  &__list[data-selection-on="true"] &__icon-select {
+    display: block !important;
+  }
+  &__list[data-selection-on="true"] &__icon-headphone {
+    display: none !important;
+  }
+
+  // Hide play btn when selection in on
+  &__list[data-hide-play-icon="true"] &__icon-play {
+    display: none !important;
+  }
+  &__list[data-hide-play-icon="true"] &__icon-music {
+    display: block !important;
+  }
+
+  &__item[data-active="true"] {
+    color: $color-primary;
+  }
+
+  // simple state
+  &__item[data-active="true"] &__icon-headphone {
+    display: block !important;
+  }
+  &__item:hover[data-active="true"] &__icon-headphone {
+    display: none !important;
+  }
+
+  &__item[data-selected="true"] &__select-btn {
+    border: none;
+  }
+
+  &__item[data-selected="true"] &__icon-select {
+    color: $color-white;
+    display: block !important;
+    background: $color-primary;
+  }
+
+  &__item[data-selected="true"] &__icon-headphone {
+    display: none !important;
+    background: $color-primary;
+  }
+}

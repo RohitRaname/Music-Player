@@ -1,0 +1,55 @@
+.manage {
+  &__content {
+    @include flex-center-space;
+    background: $color-black-dim;
+    box-shadow: 1rem 2rem 3.2rem rgba($color-black, 0.2);
+    padding: 1.2rem 1rem;
+    border-radius: 11px;
+    margin: 0.5rem 0;
+  }
+
+  &__left,
+  &__right {
+    @include flex-center;
+    gap: 1.5rem;
+  }
+
+  // &__left{} *************************************
+  &__select {
+    &-box {
+      @include flex-center;
+      cursor: pointer;
+      gap: 1.3rem;
+    }
+  }
+
+  //   middle
+  &__icon-circle {
+    height: 0.5rem;
+    width: 0.5rem;
+    display: inline-block;
+    background: $color-grey;
+    border-radius: 50%;
+  }
+
+  &__clear-btn {
+    color: $color-primary;
+    cursor: pointer;
+  }
+
+  // &__right{}
+}
+
+// Show manage
+.manage.show {
+  animation: show 0.2s ease-in both;
+}
+
+// JS *************************************************************
+
+// - to show the correct mark(icon) inside the radio button
+.manage__select-btn[data-selected="true"] .manage__select-icon {
+  color: $color-white;
+  background: $color-primary;
+  border: none;
+}

@@ -1,0 +1,99 @@
+.sidebar {
+  .sidebar__content {
+    border-right: 1px solid $color-black-dim;
+    background: $color-black-dark;
+    @include flex-column;
+  }
+
+  &__header {
+    padding: 1.2rem 2rem;
+
+    &-box {
+      @include flex-center;
+      gap: 1.6rem;
+    }
+
+    &-icon {
+    }
+    &-text {
+      font-size: $font-size-sm;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  }
+
+  &__setting {
+    margin-top: auto;
+    margin-bottom: 0.4rem;
+  }
+
+  &__item--playlist[data-state="close"] {
+    overflow: visible !important;
+    
+    .sidebar__icon-list {
+      transform: rotate(180deg) !important;
+    }
+  }
+  
+  &__item--playlist[data-state="open"] {
+    overflow: hidden !important;
+  }
+
+  .sidebar__icon-list {
+    transform: rotate(0deg) !important;
+  }
+
+  &__item[data-section="setting"] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 95%;
+
+  }
+}
+
+.search {
+  position: relative;
+  &__input {
+    padding: 1rem 2.4rem;
+    background: $color-black-dim;
+    border: none;
+    font-size: $font-size-md;
+    font-family: inherit;
+
+    color: $color-grey-light;
+    // when we do width 100% we get width of content left after covered padding area minus
+    width: 100%;
+    border-bottom: 2px solid $color-grey-dark;
+    border-radius: $border-radius-md;
+    transition: all 0.3s;
+    box-shadow: $box-shadow-light;
+
+    &::placeholder {
+      color: $color-grey;
+    }
+
+    &:focus {
+      background: transparent;
+      border: 1px solid rgba($color-grey-dark, 0.2);
+
+      border-bottom: 2px solid $color-primary-light;
+      outline: none;
+    }
+  }
+}
+
+.music__item {
+  &--sidebar {
+  }
+
+  &-icon--sidebar {
+  }
+  &-title--sidebar {
+  }
+}

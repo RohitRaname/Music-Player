@@ -1,0 +1,10 @@
+.spinner {
+  text-align: center;
+  &__icon {
+    display: inline-block;
+    height: 4.4rem;
+    width: 4.4rem;
+    fill: $color-primary;
+    animation: spin 1s infinite;
+  }
+}

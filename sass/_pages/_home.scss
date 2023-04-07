@@ -1,0 +1,73 @@
+body {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  width: 100vw;
+  height: 100vh;
+  font-size: $font-size-md;
+
+  color: $color-grey;
+  background: $color-black-light;
+}
+
+// To change layout from grid to list
+.view {
+  &-change {
+    position: absolute;
+    top: 5rem;
+    right: 10rem;
+  }
+  &-icon {
+  }
+}
+
+.sidebar,
+.main {
+  height: 86vh;
+  width: 100%;
+}
+
+.sidebar__content {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 86vh;
+  width: 20%;
+}
+
+.main {
+  padding: 4.8rem;
+  padding-bottom: 0;
+  transform: translate(0);
+  height: 86vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80% !important;
+  overflow-y: scroll;
+  transition: all 0.3s;
+}
+
+.section-content {
+  // if only position absolute is set it is set realtive to itsle f at thge sam epositon
+  position: absolute;
+  height: 76%;
+  width: 90%;
+  overflow-y: scroll;
+  animation: userViewing 0.2s ease-in 0.1s both;
+}
+
+.section-control {
+  position: fixed;
+  z-index: 100;
+  height: 14vh;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.section-control {
+  grid-row: 2;
+  grid-column: 1/-1;
+}
+
+// ///////////////////////////////@at-root

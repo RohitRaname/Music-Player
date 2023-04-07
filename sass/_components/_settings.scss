@@ -1,0 +1,135 @@
+.setting {
+  font-size: $font-size-sm;
+  &__content {
+  }
+  &__box {
+  }
+
+  //- ITEM *******************************************
+  &__item {
+    overflow: hidden;
+
+    border-radius: $border-radius-md;
+    position: relative;
+  }
+
+  &__item:hover .setting__icon-box {
+    background: $color-black-dull;
+    filter: brightness(1.1);
+  }
+
+  &__item[data-active="true"] .setting__dropdown {
+    transform: translateY(0);
+    height: 100%;
+  }
+  &__item[data-active="true"] .setting__icon {
+    display: inline-block;
+    transform: rotate(180deg);
+  }
+
+  // DETAILS ******************************
+  &__item-detail {
+    background: $color-black-dull;
+    padding: 0.8rem 1.8rem;
+    @include flex-center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 100;
+  }
+
+  &__left,
+  &__right {
+    @include flex-center;
+  }
+
+  &__left {
+    gap: 2.4rem;
+  }
+  &__right {
+    cursor: pointer;
+    gap: 4.8rem;
+  }
+
+  //- DROPDOWN LIST *******************************
+  &__dropdown {
+    border-radius: $border-radius-sm;
+    font-size: $font-size-md;
+    width: 100%;
+    margin-top: 0.2rem;
+    padding-left: 6rem;
+    background: $color-black-dull;
+    @include flex-column;
+    align-items: start;
+    transform: translateY(-40%);
+    z-index: -1;
+    height: 0;
+    transition: height 0.1s, transform 0.2s;
+
+    // display: none;
+
+    &-item {
+      // padding: 1.6rem;
+      padding: 1rem 0;
+      padding: 1.2rem;
+      border-radius: $border-radius-sm;
+      @include flex-center;
+      display: inline-flex;
+      gap: 2rem;
+      cursor: pointer;
+      margin-bottom: 0;
+    }
+
+    &-checkbox {
+      display: inline-block;
+      border: 1px solid $color-grey;
+      border-radius: 50%;
+      height: 2.4rem;
+      width: 2.4rem;
+      position: relative;
+      transition: all 0.2s;
+
+      &::before {
+        content: "";
+        @include abs-center;
+        z-index: 2;
+        border-radius: inherit;
+      }
+    }
+
+    &-title {
+      display: inline-block;
+    }
+
+    // - HOVER **********************************************
+
+    &-item:hover &-checkbox {
+      background: $color-black-dull;
+      &::before {
+        height: 70%;
+        width: 70%;
+      }
+    }
+
+    // - ACTIVE *********************************************
+
+    &-item:active,
+    &-item[data-active="true"] {
+      .setting__dropdown-checkbox {
+        &::before {
+          height: 60%;
+          width: 60%;
+          background: $color-black;
+        }
+      }
+    }
+
+    &-item[data-active="true"] &-checkbox {
+      background: $color-primary;
+    }
+
+    // -ACTIVE AND HOVER BOTH ***********************************
+    &-item[data-active="true"]:hover &-checkbox {
+      background: $color-primary;
+    }
+  }
+}

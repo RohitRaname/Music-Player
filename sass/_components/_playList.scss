@@ -1,0 +1,44 @@
+.playlist {
+  .card__control[data-action="setting"] {
+    right: 1.5rem;
+    bottom: 6.7rem;
+  }
+
+  .card__control[data-action="play"] {
+    left: 1.5rem;
+    bottom: 6.7rem;
+  }
+  .card__img {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .card__single {
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+  }
+
+  .card__name,
+  .card__artist {
+    grid-column: 1/-1;
+    align-self: flex-end;
+  }
+
+  .card__name {
+    margin-bottom: -0.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.card__collage {
+  display: grid;
+  grid-template-columns: repeat(2, 10rem);
+  grid-template-rows: repeat(2, 9rem);
+  background: #222;
+  border: 1px solid #333;
+  height: 18rem;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+}

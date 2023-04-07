@@ -1,0 +1,76 @@
+.mini {
+  &__content {
+    font-size: $default-font-size;
+    @include fixed-center;
+    top: 45%;
+    max-width: 60rem;
+    overflow: hidden;
+    max-height: 35rem;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
+
+  &__overlay {
+    @include overlay;
+  }
+
+  &__content-main {
+    @include flex-center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 40;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    filter: brightness(50%);
+  }
+
+  &__btns {
+    @include flex-center;
+    gap: 1.6rem;
+    position: fixed;
+    top: 45%;
+  }
+
+  &__btn {
+    &:hover {
+      background: $color-black-dull;
+    }
+    i {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__btn[data-action="play"],
+  &__btn[data-action="pause"] {
+    padding: 0.4rem;
+
+    &:hover {
+      background: $gradient-primary;
+      filter: none;
+    }
+
+    i {
+      padding: 1.2rem 1.6rem;
+      font-size: 2.4rem;
+    }
+  }
+
+  &__btn-expand {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    i {
+      font-size: $default-font-size;
+    }
+  }
+}

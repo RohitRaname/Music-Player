@@ -1,0 +1,26 @@
+.drop {
+  &__parent {
+    position: relative;
+    z-index: 1000;
+  }
+
+  &__parent--active .drop__list {
+    animation: moveBottom 0.4s ease-in 0.1s both;
+  }
+
+  &__parent .drop__list {
+    padding: 0.4rem;
+    position: absolute;
+    width: 20rem;
+    bottom: -100%;
+    height: auto;
+    // overflow: hidden;
+    
+    transform: scaleY(0);
+    background: $color-black-light;
+    border-radius: 5px;
+    box-shadow: $box-shadow-dark;
+    z-index: -1;
+    border: 1px solid $color-black-dull;
+  }
+}

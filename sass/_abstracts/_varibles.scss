@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Kaushan+Script|Oswald&display=swap");
+
+// $background-on
+// $background-alt
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+// --primaryColor: #fff;
+// --navColor1: #21292c;
+// --navColor2: #aa3e39;
+// --navColor3: #aa6e39;
+// --navColor4: #236267;
+// --navColor5: #2c8437;
+
+// COLOR VARIABLES
+$color-primary: #fa5252;
+$color-primary-light: #ff8787;
+$color-primary-dark: #e03131;
+$color-primary-opacity: rgba($color-primary, 0.3);
+
+$color-secondary: #339af0;
+$color-secondary-light: #74c0fc;
+$color-secondary-dark: #1971c2;
+$color-secondary-opacity: rgba($color-secondary, 0.3);
+
+$color-tertiary: #12b886;
+$color-tertiary-dark: #099268;
+$color-tertiary-light: #38d9a9;
+$color-tertiary-opacity: rgba($color-tertiary, 0.3);
+
+// Dark Mode color
+$color-dark-primary: rgb(150, 65, 255);
+$color-dark-primary-dark: #6c63ff;
+
+$color-dark-secondary: #03dac5;
+
+// FONT VARIABLES
+$font-primary: "Nunito", sans-serif;
+$font-display: "Josefin Sans", sans-serif;
+
+// put all variable which will be changed during theme change
+:root {
+  //html
+  --color-you: blue;
+}
+
+// [data-theme="dark"] {
+//   --color-black: #fff;
+// }
+
+// .darkMode {
+//     --color-you: red;
+// }
+$color-shadow: #777;
+$color-shadow-dark: #666;
+$color-shadow-light: #999;
+
+$color-white: #fff;
+$color-white-light: #f1f3f5;
+$color-white-dark: #e9ecef;
+
+$color-grey: #ced4da;
+$color-grey-light: #dee2e6;
+$color-grey-dark: #adb5bd;
+
+$color-black: #000;
+$color-black-dark: #222;
+$color-black-light: #212529;
+$color-black-dim: #333;
+$color-black-dull: #444;
+
+$phone: 37.5em;
+$tab-port: 56.25em;
+$tab-land: 75em;
+$normal-desktop: 100em;
+$big-desktop: 112.5em;
+
+$default-box-shadow: 0 1.2rem 2.4rem rgba($color-black, 0.15);
+$box-shadow-light: 0 1.2rem 2.4rem rgba($color-black, 0.1);
+$box-shadow-medium: 0 1.2rem 2.4rem rgba($color-black, 0.2);
+$box-shadow-dark: 0 1.2rem 2.4rem rgba($color-black, 0.3);
+
+$border-line: 1px solid rgba($color-white, 0.09);
+
+$default-font-size: 1.8rem;
+$font-size-lw: 1.2rem;
+$font-size-sm: 1.4rem;
+$font-size-md: 1.6rem;
+$font-size-bg: 2rem;
+$font-size-hg: 2.2rem;
+
+$default-border-radius: 9px;
+$border-radius-sm: 3px;
+$border-radius-md: 5px;
+$border-radius-bg: 11px;
+$border-radius-hg: 13px;
+$border-radius-round: 10rem;
+
+$gradient-primary: linear-gradient(
+  to right,
+  $color-primary-light,
+  $color-primary
+);
+$gradient-secondary: linear-gradient(
+  to right bottom,
+  $color-secondary-light,
+  $color-secondary-dark
+);
+$gradient-tertiary: linear-gradient(
+  to right bottom,
+  $color-tertiary-light,
+  $color-tertiary-dark
+);
+
+$gradient-primary-opacity: linear-gradient(
+  to right bottom,
+  rgba($color-primary-light, 0.5),
+  rgba($color-primary-dark, 0.5)
+);
+$gradient-secondary-opacity: linear-gradient(
+  to right bottom,
+  rgba($color-secondary-light, 0.8),
+  rgba($color-secondary-dark, 0.8)
+);
+$gradient-tertiary-opacity: linear-gradient(
+  to right bottom,
+  rgba($color-tertiary-light, 0.8),
+  rgba($color-tertiary-dark, 0.8)
+);

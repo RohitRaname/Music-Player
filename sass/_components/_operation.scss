@@ -1,0 +1,53 @@
+.operation {
+  &__controls {
+    position: absolute;
+    top: 5rem;
+    right: 15rem;
+    // overflow: hidden;
+    z-index: 40;
+  }
+
+  &__control {
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0.4rem 1rem;
+
+    position: relative;
+
+    // overflow: hidden;
+
+    &--active {
+      border-radius: $border-radius-md;
+    
+      overflow: visible;
+    }
+
+    &--active ul {
+      animation: slideTopIn100 0.4s linear 0.1s both;
+    }
+  }
+  &__control-label {
+    position: relative;
+    // z-index: 10;
+  }
+  &__control-value {
+    color: $color-primary;
+    margin-right: 1rem;
+    position: relative;
+    // z-index: 10;
+  }
+
+  &__control-options {
+    position: relative;
+    // z-index: 10;
+    padding: 0.4rem;
+    background: $color-black-dark;
+    box-shadow: $box-shadow-dark;
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(-90%);
+    left: 10%;
+    z-index: -1;
+  }
+}

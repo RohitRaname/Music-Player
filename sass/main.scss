@@ -1,0 +1,54 @@
+@import "_abstracts/mixins";
+@import "_abstracts/varibles";
+
+@import "_base/base";
+@import "_base/typrography";
+@import "_base/utilities";
+@import "_base/animations";
+
+@import "_components/spinner";
+@import "_components/button";
+
+// COMMON
+@import "_components/card";
+@import "_components/crud";
+@import "_components/control";
+@import "_components/progressBar.scss";
+@import "_components/operation";
+@import "_components/dropList.scss";
+@import "_components/popup-createPlaylist.scss";
+@import "_components/modal";
+@import "_components/modifiedDropdown.scss";
+
+// OVERVIEW PAGE
+@import "_components/music";
+@import "_components/sidebar";
+@import "_components/overview";
+
+// SETTING PAGE
+@import "_components/settings";
+
+// GALLERY PAGE
+@import "_components/gallery";
+
+// MINI WINDOW
+@import "_components/mini";
+
+// LIBRARY
+@import "_components/library";
+
+// PLAYLIST MAIN
+@import "_components/playList";
+
+// PLAYLIST SONGS
+@import "_components/playlistSongs";
+@import "_components/managePlaylist";
+
+@import "_layouts/grid";
+@import "_layouts/navbar";
+@import "_layouts/hero";
+@import "_layouts/header";
+@import "_layouts/footer";
+
+@import "_pages/home";
+@import "_pages/gallery"; // i must make site like asura scan i am rohit rana very soo

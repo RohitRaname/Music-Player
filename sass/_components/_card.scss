@@ -1,0 +1,167 @@
+.card {
+  position: relative;
+  border-radius: $border-radius-bg;
+  // overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0.5rem;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 20rem);
+    column-gap: 1.6rem;
+    row-gap: 1.4rem;
+  }
+
+  &:hover {
+    background: $color-black-dim;
+  }
+
+  &:hover &__controls {
+    display: block !important;
+  }
+
+  &__controls {
+    transition: all 0.2s;
+  }
+  &__control {
+    & {
+      overflow: hidden;
+      position: absolute;
+      bottom: 8rem;
+      background: rgba($color-black, 0.5);
+      padding: 0.8rem 0.8rem;
+      border-radius: 50%;
+      border: 1px solid $color-shadow;
+
+      @include flex-center;
+      z-index: 10;
+      transition: all 0.2s;
+
+      &:hover {
+        background: $color-black-dim;
+      }
+
+      &:active {
+        border: none;
+      }
+    }
+
+    &[data-action="play"] {
+      left: 1rem;
+      bottom: 7.5rem;
+
+      i {
+        font-size: 1.6rem;
+      }
+    }
+
+    &[data-action="setting"] {
+      bottom: 7.5rem;
+      right: 1rem;
+    }
+
+    &[data-action="select"] {
+      top: 1.6rem;
+      left: 1.6rem;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 5px;
+      border: 1px solid $color-shadow;
+
+      i {
+        opacity: 0;
+        color: $color-black;
+      }
+
+      &:active i {
+        opacity: 1;
+      }
+    }
+
+    &--active[data-action="select"],
+    &--active[data-action="select"]:hover {
+      background: $gradient-tertiary;
+
+      i {
+        opacity: 1;
+      }
+    }
+
+    &-icon {
+      font-size: 1.4rem;
+      color: $color-grey;
+    }
+  }
+
+  .card__control--active[data-action="setting"] {
+    overflow: visible;
+
+    .card__settings {
+      animation: slideUp 0.1s linear 0.1s both;
+    }
+  }
+
+  &__img {
+    max-width: 20rem;
+    width: 100%;
+    height: 100%;
+    max-height: 18rem;
+    border-radius: 9px;
+    object-fit: cover;
+    filter: brightness(90%);
+    border: 1px solid $color-black-dull;
+  }
+
+  &__name,
+  &__artist {
+    padding: 0 0.8rem;
+    padding-bottom: 0;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+  &__name {
+    font-weight: 600;
+    color: $color-grey-light;
+  }
+  &__artist {
+    font-weight: 300;
+    color: $color-grey-dark;
+    font-size: $font-size-lw;
+    padding-bottom: 0.5rem;
+  }
+
+  &__settings {
+    position: absolute;
+    width: 20rem;
+
+    bottom: 100%;
+    padding: 0.4rem !important;
+
+    border-radius: 5px;
+    box-shadow: $box-shadow-dark;
+  }
+}
+
+// display card control even when mouse is over other element
+.show--control-setting {
+  .card__controls {
+    display: block !important;
+  }
+}
+
+// display select control while hiding other control
+.card__list--select {
+  .card__controls {
+    display: block !important;
+  }
+
+  .card__control {
+    display: none;
+  }
+
+  .card__control[data-action="select"] {
+    display: flex;
+  }
+}

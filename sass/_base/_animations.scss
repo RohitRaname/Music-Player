@@ -1,0 +1,149 @@
+// apply direct page load
+
+@keyframes slideTopIn {
+  // apply when dom loaded
+  0% {
+    bottom: 100%;
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    top: 100%;
+    // position: static;
+    // bottom: 0;
+    // left: 0;
+  }
+}
+@keyframes slideTopIn100 {
+  // apply when dom loaded
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(110%);
+  }
+}
+
+@keyframes slideTopIn400 {
+  // apply when dom loaded
+  0% {
+    transform: translateY(0%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+}
+
+@keyframes userViewing {
+  0% {
+    transform: translateY(4rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  // apply when dom loaded
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+
+  40% {
+    transform: translateY(5%);
+    // opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-3%);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveBottom {
+  0% {
+    transform: scaleY(0) translateY(0%);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 1;
+    transform: scaleY(0.8) translateY(80%);
+  }
+
+  100% {
+    transform: scaleY(1) translateY(88%);
+    opacity: 1;
+  }
+}
+@keyframes moveTop {
+  0% {
+    height: 0;
+    transform: translateY(100%);
+  }
+
+  10% {
+    height: 100%;
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+}
+
+@keyframes goDown {
+  0% {
+    transform: scaleY(0%);
+  }
+
+  100% {
+    transform: scaleY(100%);
+  }
+}

@@ -1,0 +1,29 @@
+.active--gallery .curMusic__img {
+  position: absolute;
+  bottom: 0;
+  height: 30rem;
+  width: 30rem;
+  border-radius: 11px;
+  left: 2.4rem;
+  bottom: 12.5rem;
+  box-shadow: $box-shadow-dark;
+}
+
+.gallery {
+  &__overlay {
+    @include overlay;
+    z-index: 5;
+
+    -moz-backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(100px);
+    background: rgba($color-black, 0.34);
+  }
+  &__img {
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    @include fixed;
+    object-fit: cover;
+  }
+}
